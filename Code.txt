@@ -1,0 +1,321 @@
+#include<stdio.h>
+#include<conio.h>
+#include<math.h>
+#define PI 3.141
+#define MAX 180
+
+int x=0,result=0;
+
+void add(void);
+void sub(void);
+void mul(void);
+void div(void);
+void mod(void);
+void clear(void);
+void sine(void);
+void cosine(void);
+void tangent(void);
+void cotangent(void);
+void sec(void);
+void cosec(void);
+void cube(void);
+void square(void);
+void sqroot(void);
+
+void main()
+{
+     char name[20],password[20];
+     int r;
+     clrscr();
+     printf("enter the name of candidate : ");
+     gets(name);
+     printf("enter the password : ");
+     gets(password);
+     r=strcmp(name,password);
+     while(1)
+	{
+	  if(r!=0)
+	  break;
+	  clrscr();
+	  printf("\n\nresult  :  %d\n",result);
+	  switch(menu())
+		{
+		   case 1:
+			 add();
+			 x=1;
+			 break;
+
+		   case 2:
+			 sub();
+			 x=1;
+			 break;
+
+		   case 3:
+			 mul();
+			 x=1;
+			 break;
+
+		   case 4:
+			 div();
+			 x=1;
+			 break;
+
+		   case 5:
+			 mod();
+			 x=1;
+			 break;
+
+		   case 6:
+			 clear();
+			 break;
+
+		   case 7:
+			 sine();
+			 break;
+
+		   case 8:
+			 cosine();
+			 break;
+
+		   case 9:
+			 tangent();
+			 break;
+
+		   case 10:
+			 cotangent();
+			 break;
+
+		   case 11:
+			 sec();
+			 break;
+
+		   case 12:
+			 cosec();
+			 break;
+
+		   case 14:
+			 cube();
+			 break;
+
+		   case 15:
+			 square();
+			 break;
+
+		   case 16:
+			 sqroot();
+			 break;
+
+		   case 13:
+			 exit(0);
+
+		   default:
+			 printf("WRONG CHOICE :  SELECT AGAIN: \n");
+			 break;
+
+}
+getch();
+}        }
+
+int menu(void)
+{
+	   int m;
+		   printf("\n1         add          ");
+		   printf("2         sub\n");
+		   printf("3         mul           ");
+		   printf("4         div\n");
+		   printf("5         mod           ");
+		   printf("6         clear\n");
+		   printf("7         sin           ");
+		   printf("8         cos\n");
+		   printf("9         tan           ");
+		   printf("10        cot\n");
+		   printf("11        sec           ");
+		   printf("12        cosec\n");
+		   printf("13        exit          ");
+		   printf("14        ***\n");
+		   printf("15        **            ");
+		   printf("16        sqrt\n");
+		   printf("\n\nenter a option:  ");
+		   scanf("%d",&m);
+		   return m;
+}
+void add()
+{
+	   int a,b;
+		   if(x)
+			{
+			   printf("enter a number:  ");
+			   scanf("%d",&a);
+			   result=result+a;
+			   printf("result  =  %d",result);
+			}
+		   else
+			{
+			   printf("enter two numbers:   ");
+			   scanf("%d%d",&a,&b);
+			   result=a+b;
+			   printf("result   =  %d",result);
+			}
+}
+void sub()
+{
+	   int a,b;
+		   if(x)
+			{
+			   printf("enter a number:  ");
+			   scanf("%d",&a);
+			   result=result-a;
+			   printf("result   =  %d",result);
+			}
+		   else
+			{
+			   printf("enter two numbers:   ");
+			   scanf("%d%d",&a,&b);
+			   result=a-b;
+			   printf("result   =  %d",result);
+			}
+}
+void mul()
+{
+	   int a,b;
+		   if(x)
+			{
+			   printf("enter a number:  ");
+			   scanf("%d",&a);
+			   result=result*a;
+			   printf("result   =  %d",result);
+			}
+		   else
+			{
+			   printf("enter two numbers:  ");
+			   scanf("%d%d",&a,&b);
+			   result=a*b;
+			   printf("result   =  %d",result);
+			}
+}
+void div()
+{
+	   float a,b,finalresult;
+		   if(x)
+			{
+			   printf("enter a number:  ");
+			   scanf("%f",&a);
+			   finalresult=result/a;
+			   printf("finalresult   =  %f",finalresult);
+			}
+		   else
+			{
+			   printf("enter two numbers:  ");
+			   scanf("%f%f",&a,&b);
+			   finalresult=a/b;
+			   printf("finalresult   =  %f",finalresult);
+			}
+}
+void mod()
+{
+	   int a,b;
+		   if(x)
+			{
+			   printf("enter a number:  ");
+			   scanf("%d",&a);
+			   result=result%a;
+			   printf("result   =  %d",result);
+			}
+		   else
+			{
+			   printf("enter two numbers:  ");
+			   scanf("%d%d",&a,&b);
+			   result=a%b;
+			   printf("result   =  %d",result);
+			}
+}
+void clear()
+{
+		   printf("DATA CLEARED: \n");
+		   result=0;
+		   x=0;
+}
+void sine()
+{
+		  int angle;
+		  float m,n;
+		  printf("enter the angle: ");
+		  scanf("%d",&angle);
+			  n=(PI/MAX)*angle;
+			  m=sin(n);
+		  printf("value  :  %f",m);
+}
+void cosine()
+{
+		  int angle;
+		  float m,n;
+		  printf("enter the angle: ");
+		  scanf("%d",&angle);
+			  n=(PI/MAX)*angle;
+			  m=cos(n);
+		  printf("value  :  %f",m);
+}
+void tangent()
+{
+		  int angle;
+		  float m,n;
+		  printf("enter the angle: ");
+		  scanf("%d",&angle);
+			  n=(PI/MAX)*angle;
+			  m=tan(n);
+		  printf("value  :  %f",m);
+}
+void cotangent()
+{
+		  int angle;
+		  float m,n;
+		  printf("enter the angle: ");
+		  scanf("%d",&angle);
+			  n=(PI/MAX)*angle;
+			  m=1/tan(n);
+		  printf("value  :  %f",m);
+}
+void sec()
+{
+		  int angle;
+		  float m,n;
+		  printf("enter the angle: ");
+		  scanf("%d",&angle);
+			  n=(PI/MAX)*angle;
+			  m=1/cos(n);
+		  printf("value  :  %f",m);
+}
+void cosec()
+{
+		  int angle;
+		  float m,n;
+		  printf("enter the angle: ");
+		  scanf("%d",&angle);
+			  n=(PI/MAX)*angle;
+			  m=1/sin(n);
+		  printf("value  :  %f",m);
+}
+void cube()
+{
+	    int m,n;
+		  printf("enter the number: ");
+		  scanf("%d",&n);
+		  m=n*n*n;
+		  printf("resule   =  %d",m);
+}
+void square()
+{
+	    int m,n;
+		  printf("enter the number: ");
+		  scanf("%d",&n);
+		  m=n*n;
+		  printf("result   =  %d",m);
+}
+void sqroot()
+{
+	    int m,n;
+		  printf("enter the number:  ");
+		  scanf("%d",&n);
+		  m=sqrt(n);
+		  printf("result   =  %d",m);
+}
